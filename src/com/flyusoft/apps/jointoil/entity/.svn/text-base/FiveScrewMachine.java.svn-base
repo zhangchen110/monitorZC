@@ -1,0 +1,40 @@
+package com.flyusoft.apps.jointoil.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "FLY_FIVE_SCREW_MACHINE")
+public class FiveScrewMachine extends CompressorMD {
+
+	private Double bearingTemperature;// 轴承温度,
+	private Double outletTemperature;// 出气温度,
+	
+	private String compressorCode;// 压缩机的编码,
+
+	public Double getOutletTemperature() {
+		return outletTemperature;
+	}
+
+	public void setOutletTemperature(Double outletTemperature) {
+		this.outletTemperature = outletTemperature;
+	}
+
+	public Double getBearingTemperature() {
+		return bearingTemperature;
+	}
+
+	public void setBearingTemperature(Double bearingTemperature) {
+		this.bearingTemperature = bearingTemperature;
+	}
+
+
+	public String getCompressorCode() {
+		return compressorCode;
+	}
+
+	public void setCompressorCode(String compressorCode) {
+		this.compressorCode = compressorCode;
+	}
+
+}

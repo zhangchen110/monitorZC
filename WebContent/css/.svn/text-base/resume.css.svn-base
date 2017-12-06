@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*简历信息*/
+.resume_box {
+	width:800px; height:auto; clear:both; margin:0px auto;
+}
+.bas_info {
+	width:796px; height:auto; margin:0px auto;
+}
+.bas_info_title {
+	width:794px; height:30px; margin-bottom:5px; margin-top:10px; background:url(../images/resume/title_bg.jpg) repeat-x; border:#99C2CC 1px solid; white-space:nowrap; display:inline-block;
+}
+.bas_info_title span {
+	color:#FFF; text-align:left;
+}
+.re_title_l {
+	width:80%; float:left; text-align:left; padding-left:10px;
+}
+.re_title_r {
+	width:17%; float:left; text-align:right; padding-top:10px;
+}
+.re_table {
+	text-indent:0.5em; width:796px; background-color:#99C2CC; border:none;
+}
+.td_title {
+	color:#456A73; line-height:22px; height:22px; text-align:left; line-height:22px; white-space:nowrap; background-color:#D3E6EB;
+}
+.td_con {
+	line-height:22px; height:22px; text-align:left; line-height:22px; white-space:nowrap;
+}
+.textarea_re {
+	width:786px; height:180px; text-align:left; padding:4px; line-height:150%; border:#99C2CC 1px solid; word-break: break-all; word-wrap:break-word;
+}

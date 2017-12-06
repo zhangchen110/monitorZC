@@ -1,0 +1,78 @@
+.gt-first-page {
+	BACKGROUND: url(../images/page_first.gif) no-repeat center center
+}
+.gt-prev-page {
+	BACKGROUND: url(../images/page_prev.gif) no-repeat center center
+}
+.gt-next-page {
+	BACKGROUND: url(../images/page_next.gif) no-repeat center center
+}
+.gt-last-page {
+	BACKGROUND: url(../images/page_last.gif) no-repeat center center
+}
+.gt-goto-page {
+	BACKGROUND: url(../images/page_goto.gif) no-repeat center center
+}
+.gt-toolbar-text {
+	MARGIN: 2px; FONT: 13px arial, verdana, tahoma, helvetica, sans-serif; FLOAT: left; COLOR: #335566; VERTICAL-ALIGN: top
+}
+.gt-b-ie .gt-toolbar-text {
+	MARGIN-TOP: 5px
+}
+.gt-page-input {
+	BORDER-BOTTOM: #558899 1px solid; TEXT-ALIGN: right; BORDER-LEFT: #558899 1px solid; MARGIN-TOP: 2px; WIDTH: 25px; FONT: 11px tahoma, verdana, arial, helvetica, sans-serif; FLOAT: left; HEIGHT: 15px; VERTICAL-ALIGN: top; BORDER-TOP: #558899 1px solid; BORDER-RIGHT: #558899 1px solid
+}
+.gt-button-split {
+	WIDTH: 5px; BACKGROUND: url(../images/page/tool_split.gif) no-repeat center center; FLOAT: left; HEIGHT: 19px; VERTICAL-ALIGN: middle
+}
+.gt-pagesize-select {
+	BORDER-BOTTOM: #558899 1px solid; TEXT-ALIGN: right; BORDER-LEFT: #558899 1px solid; MARGIN-TOP: 2px; WIDTH: 41px; DISPLAY: block; FONT: 11px tahoma, verdana, arial, helvetica, sans-serif; FLOAT: left; HEIGHT: 16px; VERTICAL-ALIGN: bottom; BORDER-TOP: #558899 1px solid; BORDER-RIGHT: #558899 1px solid
+}
+.gt-b-ie .gt-pagesize-select {
+	WIDTH: 45px
+}
+.gt-b-safari .gt-pagesize-select {
+	WIDTH: 50px
+}
+.gt-tool-reload {
+	WIDTH: 20px; BACKGROUND: url(../images/page/tool_reload.gif) no-repeat center center; FLOAT: left; HEIGHT: 19px
+}
+.gt-page-state {
+	DISPLAY: block; FONT: 12px arial, verdana, tahoma, helvetica, sans-serif; FLOAT: right; COLOR: #335566; TOP: 0px; PADDING-TOP: 2px
+}
+.gt-page-state DIV {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 7px; OVERFLOW: hidden; PADDING-TOP: 2px
+}
+.gt-page-state-left {
+	PADDING-LEFT: 5px; FLOAT: left
+}
+.gt-button-disable {
+	FILTER: alpha(opacity =                               40); CURSOR: default; opacity: .40; -moz-opacity: 0.4
+}
+.gt-button-disable:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.gt-button-disable DIV {
+	CURSOR: default
+}
+.gt-button-disable BUTTON {
+	CURSOR: default
+}
+.gt-image-button {
+	BORDER-BOTTOM: #336699 0px solid; BORDER-LEFT: #336699 0px solid; PADDING-BOTTOM: 0px; MARGIN: 1px; PADDING-LEFT: 0px; WIDTH: 19px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; HEIGHT: 19px; FONT-SIZE: 1px; VERTICAL-ALIGN: middle; BORDER-TOP: #336699 0px solid; BORDER-RIGHT: #336699 0px solid; TEXT-DECORATION: none; PADDING-TOP: 0px; -moz-user-select: none; -khtml-user-select: none
+}
+.gt-image-button:hover {
+	BACKGROUND: url(../images/page/button_bg.gif) no-repeat center center
+}
+.gt-image-button DIV {
+	BORDER-BOTTOM: #ff0000 0px solid; BORDER-LEFT: #ff0000 0px solid; WIDTH: 100%; HEIGHT: 100%; FONT-SIZE: 1px; BORDER-TOP: #ff0000 0px solid; CURSOR: pointer; BORDER-RIGHT: #ff0000 0px solid
+}
+.gt-image-button BUTTON {
+	BORDER-BOTTOM: #ff0000 0px solid; BORDER-LEFT: #ff0000 0px solid; WIDTH: 100%; HEIGHT: 100%; FONT-SIZE: 1px; BORDER-TOP: #ff0000 0px solid; CURSOR: pointer; BORDER-RIGHT: #ff0000 0px solid
+}
+.gt-image-button-down {
+	BACKGROUND: url(../images/page/button_down_bg.gif) no-repeat center center
+}
+.gt-tool-add {
+	BACKGROUND: url(../images/page/tool_add.gif) no-repeat center center
+}

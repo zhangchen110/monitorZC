@@ -1,0 +1,748 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ include file="/common/taglibs.jsp"%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<%@ include file="/common/meta.jsp"%>
+		<style type="text/css" >
+			 body{TEXT-ALIGN: center; background-color:#CFD7E6;}
+			.div1 {float:left; margin:5px; height:240px;width:570px;background-color:#FFFFFF;border:2px solid #D6DEFA;}
+			.divtem {float:left;height:195px; width:235px;background-color:#FFFFFF ;padding-top:10px;padding-left:10px;text-align:center;margin-top:auto;}
+			.divpre {float:left;height:110px; width:245px;background-color:#FFFFFF ;padding-top:60px;text-align:center;margin-top:auto;}
+			.div3 {float:left;height:215px; width:320px;background-color:#FFFFFF ;}
+			.head1 {float:left;height:30px;background-color:#FFFFFF ;font-size:18px ;font-weight:bloder;text-align:center;}
+			.divNum{text-align:center;width:565px;font-size:18px;"}
+		</style>
+		<script type="text/javascript">
+		function updateChart(){
+
+			var comCode = $("#comCode").val(); //获取
+			$.get("${ctx}/compressorRealTimeMonitor_realTime.do?comCode=" + comCode, {},
+				function(data) {
+				if(data!=null&&data!=""){
+					var array = data.split(";");//compressorCode,J4-Y4;1JHSWD,49.3,0
+					var compressorCodeArr=array[0].split(",");//compressorCode,J4-Y4
+					var timeArr=array[1].split(",");//time,2011-11-04 13:24:12.0;
+					var timeValue=timeArr[1];//2011-11-04 13:24:12.0					
+					$("#time1").text(timeValue.substring(0,19));
+					var compressorCode=compressorCodeArr[1];//J4-Y4
+					for( i=2;i<array.length;i++){
+							var valueArr=array[i].split(",");
+							var key=valueArr[0];//2JHSWD
+							var value=valueArr[1];//35.52
+							var alarm=valueArr[2];//0不报警  1报警
+							var identify=key.substring(key.length-2,key.length);
+						if(identify=="WD"||identify=="YL"){
+							var pic=getChartFromId("chart_"+key);
+							
+							var picCurve=getChartFromId("chart_"+key+"C");
+							var tmpData="&label="+timeValue+"&value="+value;
+							var tmpCData="&label="+""+"&value="+value;
+							if(identify=="WD"){
+								$("#"+key+"CODE").text(value+"℃");
+							}else if(identify=="YL"){
+								$("#"+key+"CODE").text(value+"MPa");
+							}
+							if(pic!=null){
+								pic.feedData(tmpData);
+							}
+							if(picCurve!=null){
+								picCurve.feedData(tmpCData);
+							}
+						}else{
+							if(key!="YXZT"){
+								$("#"+key+"1").text(value);
+							}else{
+								if(value==1){
+									$("#"+key+"1").text("运行中");
+								}else  if(value==2){
+									$("#"+key+"1").text("报警");
+								}else  if(value==0){
+									$("#"+key+"1").text("停止");
+								}
+							}
+						}
+						if(alarm==1){
+							//$("#"+key+"_BORDER").flashingBorder().go;
+							$("#"+key+"_BORDER").css("border-color","#FF0000");
+							
+						}else{
+							//$("#"+key+"_BORDER").flashingBorder().stop();
+							$("#"+key+"_BORDER").css("border-color","#FFFFFF");
+							
+						}
+					}
+				}
+			});
+		}
+	$(document).ready(function() {
+		var str="${alarmString}";
+			if(str!=null&&str!=""){
+				var arr=str.split(",");
+				for(k=0;k<arr.length;k++){
+					var alarm=arr[k];
+					if(alarm == ""){
+						continue;
+					}
+					//$("#"+alarm+"_BORDER").flashingBorder().go();
+					$("#"+alarm+"_BORDER").css("border-color","FF0000");
+				}
+			}
+		setInterval('updateChart()', 5000);
+	});
+</script>
+		
+	</head>
+	<body >
+	<s:if test="hasActionMessages()">
+			<s:iterator value="actionMessages">
+				<script language="JavaScript"> 
+				   //弹出DIV提示
+	               showMessage("<s:property escape="false"/>");
+	       		</script>
+			</s:iterator>
+		</s:if>
+		<div style="left: 0px; top: 89px; width: 1770px;MARGIN-RIGHT: auto;	MARGIN-LEFT: auto;">
+			
+			<s:if test="compressorMonitorData.runningState!=0">
+			<div id="ext-gen15" class="x-panel-bwrap" >
+				<div style="font-size:18px;margin:5px;width:1740px;height:28px;align:center;background-color:#FFFFFF ;border:2px solid #D6DEFA;" align="center">
+				<input id="comCode" value="${ compressorMonitorData.compressorCode}" type="hidden"/>
+					<div id="compressorCode" class="head1">压缩机编号：<span id="compressorCode1">${compressorMonitorData.compressorCode}</span></div>
+					<div id="YXZT" class="head1">　运行状态：<s:if test="compressorMonitorData.runningState==1"><span id="YXZT1">运行中</span></s:if><s:if test="compressorMonitorData.runningState==0"><span id="YXZT1">停止</span></s:if><s:if test="compressorMonitorData.runningState==2"><span id="YXZT1">报警</span></s:if></div>
+					<div id="time" class="head1">　监控时间：<span id="time1"><s:date name="compressorMonitorData.time" format="yyyy-MM-dd HH:mm:ss"/></span></div>
+					<div id="YXSJ" class="head1">　运行时间：<span id="YXSJ1">${compressorMonitorData.runningTime}</span><span class="allunit">(h)</span></div>
+				</div>
+				<div id="ext-gen15" style="float: left; width: 1920px;">
+					<s:if test="compressorMonitorData.firstInletTemperature!=null">
+						<div id="1JJQWD_BORDER"  class="div1">
+						<div id="1JJQWDCODE" class="divNum"  style="left: 210px;top:110px;">${compressorMonitorData.firstInletTemperature}℃</div>
+							<div id="1JJQWD" class="divtem">
+							一级进气温度${compressorMonitorData.firstInletTemperature}
+							</div>
+							<div id="1JJQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_1JJQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["1JJQWDTEM"]}');
+						chartTem.render("1JJQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_1JJQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["1JJQWDTEMC"]}');
+						chartTemC.render("1JJQWDC");
+						</script>
+					</s:if>
+					
+					<s:if test="compressorMonitorData.firstPistonTemperature!=null">
+						<div  id="1JHSWD_BORDER"
+							class="div1">
+							<div id="1JHSWDCODE" class="divNum" >${compressorMonitorData.firstPistonTemperature}℃</div>
+							<div id="1JHSWD" class="divtem">
+							一级活塞温度${compressorMonitorData.firstPistonTemperature}
+							</div>
+							<div id="1JHSWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_1JHSWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["1JHSWDTEM"]}');
+						chartTem.render("1JHSWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_1JHSWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["1JHSWDTEMC"]}');
+						chartTemC.render("1JHSWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.firstExhaustTemperature!=null">
+						<div id="1JPQWD_BORDER"
+							class="div1">
+							<div id="1JPQWDCODE" class="divNum"  >${compressorMonitorData.firstExhaustTemperature}℃</div>
+							<div id="1JPQWD" class="divtem">
+							一级排气温度 ${compressorMonitorData.firstExhaustTemperature}
+							</div>
+							<div id="1JPQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_1JPQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["1JPQWDTEM"]}');
+						chartTem.render("1JPQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_1JPQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["1JPQWDTEMC"]}');
+						chartTemC.render("1JPQWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.secondInletTemperature!=null">
+						<div  id="2JJQWD_BORDER"
+							class="div1">
+							<div id="2JJQWDCODE" class="divNum"  > ${compressorMonitorData.secondInletTemperature}℃</div>
+						<div id="2JJQWD" class="divtem">
+							二级进气温度 ${compressorMonitorData.secondInletTemperature}
+							</div>
+							<div id="2JJQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_2JJQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["2JJQWDTEM"]}');
+						chartTem.render("2JJQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_2JJQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["2JJQWDTEMC"]}');
+						chartTemC.render("2JJQWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.secondExhaustTemperature!=null">
+						<div  id="2JPQWD_BORDER"
+							class="div1">
+							<div id="2JPQWDCODE" class="divNum"  >${compressorMonitorData.secondExhaustTemperature}℃</div>
+						<div id="2JPQWD" class="divtem">
+							二级排气温度 ${compressorMonitorData.secondExhaustTemperature}
+							</div>
+							<div id="2JPQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_2JPQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["2JPQWDTEM"]}');
+						chartTem.render("2JPQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_2JPQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["2JPQWDTEMC"]}');
+						chartTemC.render("2JPQWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.outletTemperature!=null">
+						<div   id="CQWD_BORDER"
+							class="div1">
+							<div id="CQWDCODE" class="divNum"  >${compressorMonitorData.outletTemperature}℃</div>
+						<div id="CQWD" class="divtem">
+							出气温度${compressorMonitorData.outletTemperature}
+							</div>
+							<div id="CQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_CQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["CQWDTEM"]}');
+						chartTem.render("CQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_CQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["CQWDTEMC"]}');
+						chartTemC.render("CQWDC");
+
+						
+						</script>
+					</s:if>
+					<!-- 五机房 后增加的进气温度 -->
+					<s:if test="compressorMonitorData.inletTemperature!=null">
+						<div   id="JQWD_BORDER"
+							class="div1">
+							<div id="JQWDCODE" class="divNum"  >${compressorMonitorData.inletTemperature}℃</div>
+						<div id="JQWD" class="divtem">
+							进气温度${compressorMonitorData.inletTemperature}
+							</div>
+							<div id="JQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_JQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["JQWDTEM"]}');
+						chartTem.render("JQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_JQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["JQWDTEMC"]}');
+						chartTemC.render("JQWDC");
+
+						
+						</script>
+					</s:if>
+					
+					
+					<!-- 五机房 后增加的   螺杆出气温度 -->
+					<s:if test="compressorMonitorData.outScrewTemperature1!=null">
+						<div   id="1LGCQWD_BORDER"
+							class="div1">
+							<div id="1LGCQWDCODE" class="divNum"  >${compressorMonitorData.outScrewTemperature1}℃</div>
+						<div id="1LGCQWD" class="divtem">
+							进气温度${compressorMonitorData.outScrewTemperature1}
+							</div>
+							<div id="1LGCQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_1LGCQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["1LGCQWDTEM"]}');
+						chartTem.render("1LGCQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_1LGCQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["1LGCQWDTEMC"]}');
+						chartTemC.render("1LGCQWDC");
+
+						
+						</script>
+					</s:if>
+					
+					
+					<!-- 五机房 后增加的  螺杆出气温度 -->
+					<s:if test="compressorMonitorData.outScrewTemperature2!=null">
+						<div   id="2LGCQWD_BORDER"
+							class="div1">
+							<div id="2LGCQWDCODE" class="divNum"  >${compressorMonitorData.outScrewTemperature2}℃</div>
+						<div id="2LGCQWD" class="divtem">
+							进气温度${compressorMonitorData.outScrewTemperature2}
+							</div>
+							<div id="2LGCQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_2LGCQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["2LGCQWDTEM"]}');
+						chartTem.render("2LGCQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_2LGCQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["2LGCQWDTEMC"]}');
+						chartTemC.render("2LGCQWDC");
+
+						
+						</script>
+					</s:if>
+					
+					
+					
+					<s:if test="compressorMonitorData.bearingTemperature!=null">
+						<div  id="ZCWD_BORDER"
+							class="div1">
+							<div id="ZCWDCODE" class="divNum"  >${compressorMonitorData.bearingTemperature}℃</div>
+						<div id="ZCWD" class="divtem">
+							轴承温度${compressorMonitorData.bearingTemperature}
+							</div>
+							<div id="ZCWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_ZCWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["ZCWDTEM"]}');
+						chartTem.render("ZCWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_ZCWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["ZCWDTEMC"]}');
+						chartTemC.render("ZCWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.secondPistonTemperature!=null">
+						<div  id="2JHSWD_BORDER"
+							class="div1">
+							<div id="2JHSWDCODE"  class="divNum">${compressorMonitorData.secondPistonTemperature}℃</div>
+						<div id="2JHSWD" class="divtem">
+							二级活塞温度${compressorMonitorData.secondPistonTemperature}
+							</div>
+							<div id="2JHSWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_2JHSWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["2JHSWDTEM"]}');
+						chartTem.render("2JHSWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_2JHSWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["2JHSWDTEMC"]}');
+						chartTemC.render("2JHSWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.coolingWaterTemperature!=null">
+						<div  id="LQSWD_BORDER"
+							class="div1">
+							<div id="LQSWDCODE" class="divNum"  >${compressorMonitorData.coolingWaterTemperature}℃</div>
+						<div id="LQSWD" class="divtem">
+							冷却水温度${compressorMonitorData.coolingWaterTemperature}
+							</div>
+							<div id="LQSWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_LQSWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["LQSWDTEM"]}');
+						chartTem.render("LQSWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_LQSWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["LQSWDTEMC"]}');
+						chartTemC.render("LQSWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.screwTemperature!=null">
+						<div  id="LGWD_BORDER"
+							class="div1">
+							<div id="LGWDCODE" class="divNum"  >${compressorMonitorData.screwTemperature}℃</div>
+						<div id="LGWD" class="divtem">
+							螺杆温度${compressorMonitorData.screwTemperature}
+							</div>
+							<div id="LGWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_LGWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["LGWDTEM"]}');
+						chartTem.render("LGWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_LGWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["LGWDTEMC"]}');
+						chartTemC.render("LGWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.exhaustTemperature!=null">
+						<div  id="PQWD_BORDER"
+							class="div1">
+							<div id="PQWDCODE" class="divNum"  >${compressorMonitorData.exhaustTemperature}℃</div>
+						<div id="PQWD" class="divtem">
+							排气温度${compressorMonitorData.exhaustTemperature}
+							</div>
+							<div id="PQWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_PQWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["PQWDTEM"]}');
+						chartTem.render("PQWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_PQWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["PQWDTEMC"]}');
+						chartTemC.render("PQWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.thirdPistonTemperature!=null">
+						<div id="3JHSWD_BORDER"
+							class="div1">
+							<div id="3JHSWDCODE" class="divNum" >${compressorMonitorData.thirdPistonTemperature}℃</div>
+						<div id="3JHSWD" class="divtem">
+							三级活塞温度${compressorMonitorData.thirdPistonTemperature}
+							</div>
+							<div id="3JHSWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_3JHSWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["3JHSWDTEM"]}');
+						chartTem.render("3JHSWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_3JHSWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["3JHSWDTEMC"]}');
+						chartTemC.render("3JHSWDC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.oilTemperature!=null">
+						<div  id="JYWD_BORDER"
+							class="div1">
+							<div id="JYWDCODE" class="divNum" > ${compressorMonitorData.oilTemperature}℃</div>
+						<div id="JYWD" class="divtem">
+							机油温度 ${compressorMonitorData.oilTemperature}
+							</div>
+							<div id="JYWDC" class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/Thermometer.swf", "chart_JYWD",
+								"140", "185", "0", "1");
+						chartTem.setDataXML('${xmlMap["JYWDTEM"]}');
+						chartTem.render("JYWD");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_JYWDC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["JYWDTEMC"]}');
+						chartTemC.render("JYWDC");
+
+						
+						</script>
+					</s:if>
+					
+					
+					<s:if test="compressorMonitorData.firstPistonPressure!=null">
+						<div  id="1JHSYL_BORDER"
+							class="div1">
+							<div id="1JHSYLCODE" class="divNum" > ${compressorMonitorData.firstPistonPressure}MPa</div>
+						<div id="1JHSYL" class="divpre">
+							一级活塞压力 ${compressorMonitorData.firstPistonPressure}
+							</div>
+						<div id="1JHSYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_1JHSYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["1JHSYLPRE"]}');
+						chartTem.render("1JHSYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_1JHSYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["1JHSYLPREC"]}');
+						chartTemC.render("1JHSYLC");
+
+						
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.secondPistonPressure!=null">
+						<div id="2JHSYL_BORDER"
+							class="div1">
+							<div id="2JHSYLCODE" class="divNum" > ${compressorMonitorData.secondPistonPressure}MPa</div>
+						<div id="2JHSYL" class="divpre">
+							二级活塞压力 ${compressorMonitorData.secondPistonPressure}
+							</div>
+						<div id="2JHSYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_2JHSYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["2JHSYLPRE"]}');
+						chartTem.render("2JHSYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_2JHSYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["2JHSYLPREC"]}');
+						chartTemC.render("2JHSYLC");
+						</script>
+					</s:if>
+					
+					<s:if test="compressorMonitorData.coolingWaterPressure!=null">
+						<div  id="LQSYL_BORDER"
+							class="div1">
+							<div id="LQSYLCODE" class="divNum"  >${compressorMonitorData.coolingWaterPressure}MPa</div>
+						<div id="LQSYL" class="divpre">
+							冷却水压力${compressorMonitorData.coolingWaterPressure}
+							</div>
+						<div id="LQSYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_LQSYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["LQSYLPRE"]}');
+						chartTem.render("LQSYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_LQSYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["LQSYLPREC"]}');
+						chartTemC.render("LQSYLC");
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.screwPressure!=null">
+						<div id="LGYL_BORDER"
+							class="div1">
+							<div id="LGYLCODE" class="divNum" >${compressorMonitorData.screwPressure}MPa</div>
+						<div id="LGYL" class="divpre">
+							螺杆压力${compressorMonitorData.screwPressure}
+							</div>
+						<div id="LGYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_LGYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["LGYLPRE"]}');
+						chartTem.render("LGYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_LGYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["LGYLPREC"]}');
+						chartTemC.render("LGYLC");
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.thirdPistonPressure!=null">
+						<div id="3JHSYL_BORDER"
+							class="div1">
+							<div id="3JHSYLCODE" class="divNum"  >${compressorMonitorData.thirdPistonPressure}MPa</div>
+						<div id="3JHSYL" class="divpre">
+							三级活塞压力${compressorMonitorData.thirdPistonPressure}
+							</div>
+						<div id="3JHSYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_3JHSYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["3JHSYLPRE"]}');
+						chartTem.render("3JHSYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_3JHSYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["3JHSYLPREC"]}');
+						chartTemC.render("3JHSYLC");
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.exhaustPressure!=null">
+						<div id="PQYL_BORDER"
+							class="div1">
+							<div id="PQYLCODE" class="divNum" >${compressorMonitorData.exhaustPressure}MPa</div>
+						<div id="PQYL" class="divpre">
+							排气压力${compressorMonitorData.exhaustPressure}
+							</div>
+						<div id="PQYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_PQYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["PQYLPRE"]}');
+						chartTem.render("PQYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_PQYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["PQYLPREC"]}');
+						chartTemC.render("PQYLC");
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.oilPressure!=null">
+						<div id="JYYL_BORDER"
+							class="div1">
+							<div id="JYYLCODE" class="divNum" >${compressorMonitorData.oilPressure}MPa</div>
+						<div id="JYYL" class="divpre">
+							机油压力 ${compressorMonitorData.oilPressure}
+							</div>
+						<div id="JYYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_JYYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["JYYLPRE"]}');
+						chartTem.render("JYYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_JYYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["JYYLPREC"]}');
+						chartTemC.render("JYYLC");
+						</script>
+					</s:if>
+					<s:if test="compressorMonitorData.inletPressure!=null">
+						<div id="JQYL_BORDER"
+							class="div1">
+							<div id="JQYLCODE" class="divNum" >${compressorMonitorData.inletPressure}MPa</div>
+						<div id="JQYL" class="divpre">
+							进气压力 ${compressorMonitorData.inletPressure}
+							</div>
+						<div id="JQYLC"  class="div3">
+							</div>
+						</div>
+						<script type="text/javascript">
+						var chartTem = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/AngularGauge.swf", "chart_JQYL",
+								"220", "110", "0", "1");
+						chartTem.setDataXML('${xmlMap["JQYLPRE"]}');
+						chartTem.render("JQYL");
+
+						var chartTemC = new FusionCharts(
+								"${ctx}/fusionWidgets/Charts/RealTimeLine.swf", "chart_JQYLC",
+								"325", "215", "0", "1");
+						chartTemC.setDataXML('${xmlMap["JQYLPREC"]}');
+						chartTemC.render("JQYLC");
+						</script>
+					</s:if>
+			</div>
+		</div>
+		</s:if><s:else>
+			<font size="32px">压缩机未运行</font>
+		</s:else>
+	</div>
+	</body>
+</html>

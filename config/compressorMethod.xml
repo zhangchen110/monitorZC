@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<compressorMethod>
+	<method name="1JHSWD">firstPistonTemperature</method><!--一级活塞温度 -->
+	<method name="1JHS1WD">firstPistonTemperature1</method><!-- 一级活塞温度1 -->
+	<method name="1JHS2WD">firstPistonTemperature2</method><!--一级活塞温度2 -->
+	<method name="1JJQWD">firstInletTemperature</method><!-- 一级进气温度 -->
+	<method name="1JPQWD">firstExhaustTemperature</method><!--一级排气温度 -->
+	<method name="2JHSWD">secondPistonTemperature</method><!--二级活塞温度 -->
+	<method name="2JJQWD">secondInletTemperature</method><!--二级进气温度 -->
+	<method name="2JPQWD">secondExhaustTemperature</method><!--二级排气温度 -->
+	<method name="3JHSWD">thirdPistonTemperature</method><!--三级活塞温度 -->
+	<method name="JYWD">oilTemperature</method><!--机油温度 -->
+	<method name="JYDWD">oilLowTemperature</method><!--机油底温 -->
+	<method name="LGWD">screwTemperature</method><!--螺杆温度 -->
+	<method name="ZCWD">bearingTemperature</method><!--轴承温度 -->
+	<method name="LQSWD">coolingWaterTemperature</method><!--冷却水温度 -->
+	<method name="JT1WD">dieTemperature1</method><!-- 机头温度1 -->
+	<method name="JT2WD">dieTemperature2</method><!--机头温度2 -->
+	<method name="JTWD">dieTemperature</method><!--机头温度 -->
+	<method name="CK1WD">outletTemperature1</method><!--出口温度1 -->
+	<method name="CK2WD">outletTemperature2</method><!--出口温度2 -->
+	<method name="PQWD">exhaustTemperature</method><!--排气温度 -->
+	<method name="CQWD">outletTemperature</method><!--出气温度 -->
+	<method name="JQWD">inletTemperature</method><!--进气温度 -->
+	<method name="1LGCQWD">outScrewTemperature1</method><!--螺杆出气温度1 -->
+	<method name="2LGCQWD">outScrewTemperature2</method><!--螺杆出气温度2 -->
+	
+	<method name="1JHSYL">firstPistonPressure</method><!--一级活塞压力 -->
+	<method name="2JHSYL">secondPistonPressure</method><!--二级活塞压力 -->
+	<method name="3JHSYL">thirdPistonPressure</method><!--三级活塞压力 -->
+	<method name="JYYL">oilPressure</method><!--机油压力 -->
+	<method name="LGYL">screwPressure</method><!--螺杆压力 -->
+	<method name="LQSYL">coolingWaterPressure</method><!--冷却水压力 -->
+	<method name="JQYL">inletPressure</method><!--进气压力 -->
+	<method name="PQYL">exhaustPressure</method><!--排气压力 -->
+	<method name="CQYL">outletPressure</method><!--出气压力 -->
+	<!--非警报指标 -->
+	<method name="FSDJDL">fanMotorCurrent</method><!--风扇电机电流 -->
+	<method name="QDQFKCD">starterFeedbackContact</method><!--启动器反馈触点 -->
+	<method name="YGLQ">oilFilter</method><!--油过滤器 -->
+	<method name="YFLQ">oilSeparator</method><!--油分离器 -->
+	<method name="KQGLQ">airFilter</method><!--空气过滤器 -->
+	
+	<!-- 井指标 -->
+	<method name="TEM">temperature</method>
+	<method name="PRE">pressure</method>
+	<method name="SJLL">instantaneousFlow</method>
+	<method name="LJLL">accumulativeFlow</method>
+	<!-- 机房指标 -->
+	<method name="HGYL">convergePipePressure</method><!--汇管压力 -->
+	<method name="HGWD">convergePipeTemperature</method><!--汇管温度 -->
+	<method name="SGLQSYL">convergePipeCoolingWaterPressure</method><!--水管冷却水压力 -->
+	<method name="SGLQSWD">convergePipeCoolingWaterTemperature</method><!--水管冷却水温度 -->
+</compressorMethod>

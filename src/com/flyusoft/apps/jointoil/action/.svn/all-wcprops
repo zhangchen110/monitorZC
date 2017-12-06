@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action
+END
+JointOilWellAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/platform/!svn/ver/525/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/JointOilWellAction.java
+END
+CompressorRecordAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/CompressorRecordAction.java
+END
+AlarmLogAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/AlarmLogAction.java
+END
+MachineRoomRecordAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/platform/!svn/ver/522/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/MachineRoomRecordAction.java
+END
+StatisticsHistoryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/platform/!svn/ver/524/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/StatisticsHistoryAction.java
+END
+MachineRoomIndexAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/458/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/MachineRoomIndexAction.java
+END
+IndexcomAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/IndexcomAction.java
+END
+WellAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/366/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/WellAction.java
+END
+JointOilCompressorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/platform/!svn/ver/427/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/JointOilCompressorAction.java
+END
+CompressorIndexAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/366/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/CompressorIndexAction.java
+END
+CompressorRealTimeMonitorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/platform/!svn/ver/539/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/CompressorRealTimeMonitorAction.java
+END
+ToSingleCameraAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/ToSingleCameraAction.java
+END
+CompressorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/474/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/CompressorAction.java
+END
+MachineRoomAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/platform/!svn/ver/303/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/MachineRoomAction.java
+END
+AppAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/platform/!svn/ver/388/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/AppAction.java
+END
+WellRealTimeMonitorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/platform/!svn/ver/521/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/WellRealTimeMonitorAction.java
+END
+CompressorHistoryRecordAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/platform/!svn/ver/522/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/action/CompressorHistoryRecordAction.java
+END

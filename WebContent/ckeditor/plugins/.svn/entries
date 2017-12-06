@@ -1,0 +1,139 @@
+10
+
+dir
+491
+http://192.168.1.104:8899/svn/platform/trunk/flyusofts/webapp/ckeditor/plugins
+http://192.168.1.104:8899/svn/platform
+
+
+
+2011-09-22T00:55:34.218750Z
+163
+helin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c15ff8bf-4a9c-6349-a260-d3625da587b8
+
+a11yhelp
+dir
+
+about
+dir
+
+adobeair
+dir
+
+ajax
+dir
+
+autogrow
+dir
+
+bbcode
+dir
+
+clipboard
+dir
+
+colordialog
+dir
+
+devtools
+dir
+
+dialog
+dir
+
+div
+dir
+
+docprops
+dir
+
+find
+dir
+
+flash
+dir
+
+forms
+dir
+
+iframe
+dir
+
+iframedialog
+dir
+
+image
+dir
+
+link
+dir
+
+liststyle
+dir
+
+pagebreak
+dir
+
+pastefromword
+dir
+
+pastetext
+dir
+
+placeholder
+dir
+
+scayt
+dir
+
+showblocks
+dir
+
+smiley
+dir
+
+specialchar
+dir
+
+styles
+dir
+
+stylesheetparser
+dir
+
+table
+dir
+
+tableresize
+dir
+
+tabletools
+dir
+
+templates
+dir
+
+uicolor
+dir
+
+wsc
+dir
+
+xml
+dir
+

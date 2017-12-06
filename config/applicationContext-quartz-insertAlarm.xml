@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>插入报警指标</description>
+
+	<bean name="insertAlarmQuartz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="insertAlarmLogTrigger" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 触发器 --> 
+	<bean name="insertAlarmLogTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="insertAlarmLogTask" />
+		<property name="startDelay" value="10000"/> 
+		<property name="repeatInterval" value="3000"/> 
+		<property name="repeatCount" value="-1"/>
+	</bean>
+	
+	<!-- 作业 -->
+	<bean id="insertAlarmLogTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="insertAlarmLogJob" />
+		<property name="targetMethod" value="execute" />
+		<property name="concurrent" value="false"/>
+	</bean>
+
+	<!-- 任务 -->
+	<bean name="insertAlarmLogJob" class="com.flyusoft.apps.jointoil.quartz.InsertAlarmLog" />
+</beans>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/common/log
+END
+MockLog4jAppender.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/common/log/MockLog4jAppender.java
+END
+Log4jMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/common/log/Log4jMBean.java
+END

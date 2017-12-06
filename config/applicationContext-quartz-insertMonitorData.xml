@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>插入报警指标</description>
+
+	<bean name="changeDataQuartz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="changeDataTrigger" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 触发器 --> 
+	<bean name="changeDataTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="changeDataTask" />
+		<property name="startDelay" value="10000"/> 
+		<property name="repeatInterval" value="5000"/> 
+		<property name="repeatCount" value="-1"/>
+	</bean>
+	
+	<!-- 作业 -->
+	<bean id="changeDataTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="changeDataJob" />
+		<property name="targetMethod" value="change" />
+		<property name="concurrent" value="false"/>
+	</bean>
+
+	<!-- 任务 -->
+	<bean name="changeDataJob" class="com.flyusoft.apps.jointoil.quartz.ChangeData" />
+</beans>

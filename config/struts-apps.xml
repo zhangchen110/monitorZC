@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="apps" extends="defined-default" namespace="/">
+		<!-- 动态显示图 -->
+		<action name="app" class="appAction">
+			<result>/apps/main.jsp</result>
+		</action>
+		<action name="jointOil_*" class="jointOilAction" method="{1}">
+			<result>/apps/jointOil.jsp</result>
+			<result name="curve">/apps/showCurve.jsp</result>
+		</action>
+		<!-- 动态井显示图 -->
+		<action name="jointOilWell_*" class="jointOilWellAction" method="{1}">
+			<result>/apps/jointOilWell.jsp</result>
+			<result name="curve">/apps/showCurve.jsp</result>
+		</action>
+		<!-- 井指标 -->
+		<action name="well_*" class="wellAction" method="{1}">
+			<result name="success">/apps/wellList.jsp</result>
+			<result name="input">/apps/wellInput.jsp</result>
+			<result name="reload" type="redirect">/well.do</result>
+		</action>
+		<!-- 压缩机指标 -->
+		<action name="compressor_*" class="compressorAction" method="{1}">
+			<result name="success">/apps/compressorList.jsp</result>
+			<result name="input">/apps/compressorInput.jsp</result>
+			<result name="grapmachine">/apps/machineRoom.jsp</result>
+			<result name="reload" type="redirect">/compressor.do</result>
+		</action>
+		<!-- 联合石油压缩机 -->
+		<action name="jointOilCompressor_*" class="jointOilCompressorAction" method="{1}">
+			<result name="success">/apps/machineRoom.jsp</result>
+		</action>
+		<action name="compressorIndex_*" class="compressorIndexAction" method="{1}">
+			<result name="success">/apps/compressorIndexList.jsp</result>
+			<result name="reload" type="redirect">/compressor.do</result>
+		</action>
+		<!-- 机房 -->
+		<action name="machineRoom_*" class="machineRoomAction" method="{1}">
+			<result name="success">/apps/machineRoomList.jsp</result>
+			<result name="input">/apps/machineRoomInput.jsp</result>
+			<result name="reload" type="redirect">/machineRoom.do</result>
+		</action>
+		<action name="machineRoomIndex_*" class="machineRoomIndexAction" method="{1}">
+			<result name="success">/apps/machineRoomIndexList.jsp</result>
+			<result name="reload" type="redirect">/machineRoom.do</result>
+		</action>
+
+		<!-- 指标 -->
+		<action name="indexcom_*" class="indexcomAction" method="{1}">
+			<result name="success">/apps/indexList.jsp</result>
+		</action>
+
+		<!-- 单压缩机实时图 -->
+		<action name="compressorRealTimeMonitor_*" class="compressorRealTimeMonitorAction" method="{1}">
+			<result name="success">/apps/compressorRealTimeMonitor.jsp</result>
+		</action>
+		<!-- 实时flush监控信息  -->
+		<action name="wellreal_*" class="wellRealTimeMonitorAction" method="{1}">
+			<result name="SUCCESS">/apps/wellrealtimemonitor.jsp</result>
+		</action>
+		
+		
+		<!-- 查询压缩机历史记录 -->
+		<action name="compressorHistoryRecord_*" class="compressorHistoryRecordAction" method="{1}">
+			<result name="success">/apps/compressorHistoryRecord.jsp</result>
+		</action>
+		<!-- 查询机房历史记录 -->
+		<action name="machineRoomRecord_*" class="machineRoomRecordAction" method="{1}">
+			<result name="success">/apps/machineRoomRecord.jsp</result>
+		</action>
+		
+		<!-- 单监控画面跳转-->
+		<action name="toSingleCamera_*" class="toSingleCameraAction" method="{1}">
+			<result name="success">/apps/singleCamera.jsp</result>
+		</action>
+		
+	</package>
+
+	
+	<package name="statistics" extends="defined-default" namespace="/">
+		<!-- 统计历史记录查询——报告日志信息管理 -->
+		<action name="statistics_*" class="statisticsHistoryAction" method="{1}">
+			<result name="SUCCESS">/apps/monitordataList.jsp</result>
+			<result name="SUCCESS_CLASSREPORT">/apps/monitordataclassreportList.jsp</result>
+			<result name="SUCCESS_REPORTHTML">/apps/monitordatareportHtml.jsp</result>
+		</action>
+		<!-- 预警信息——报告日志信息管理 22 -->
+		<action name="alarmlog_*" class="alarmLogAction" method="{1}">
+			<result name="SUCCESS">/apps/alarmlogList.jsp</result>
+		</action>
+		
+		<!-- 压缩机组班报运行班报信息 -->
+		<action name="record_*" class="compressorRecordAction" method="{1}">
+			<result name="SUCCESS">/apps/compressorRecord.jsp</result>
+		</action>	
+	</package>
+	
+</struts>

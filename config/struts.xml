@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+	<!-- 用于CRUD Action的parent package -->
+	<package name="defined-default" extends="struts-default">
+		<!-- 基于paramsPrepareParamsStack,增加store interceptor保证actionMessage在redirect后不会丢失 -->
+		<interceptors>
+			<!-- <interceptor name="loginCheck" class="com.flyusoft.components.permission.action.interceptor.LoginInterceptor" /> -->
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+				<!-- <interceptor-ref name="loginCheck" /> -->
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="defaultStack" />
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+	</package>
+	
+	<include file="struts-components.xml" />
+	<include file="struts-apps.xml" />
+</struts>  

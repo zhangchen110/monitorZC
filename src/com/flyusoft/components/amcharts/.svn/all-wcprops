@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts
+END
+ColumnData.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/ColumnData.java
+END
+LineData.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/LineData.java
+END
+AmchartsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/AmchartsManager.java
+END
+AmchartsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/AmchartsAction.java
+END
+PieData.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/PieData.java
+END
+DummyDataFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/10/trunk/flyusofts/src/main/java/com/flyusoft/components/amcharts/DummyDataFetcher.java
+END

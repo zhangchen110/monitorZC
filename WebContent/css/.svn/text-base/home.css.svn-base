@@ -1,0 +1,293 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+img, body, html {
+    border: 0 none;
+}
+.x-viewport, .x-viewport body {
+    border: 0 none;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.x-viewport, .x-viewport body {
+    border: 0 none;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.x-border-layout-ct {
+    background: none repeat scroll 0 0 #F0F0F0;
+}
+img, body, html {
+    border: 0 none;
+}
+body {
+    color: black;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+div {
+    margin: 0;
+    padding: 0;
+}
+.x-panel {
+    border-color: #D0D0D0;
+    border-style: solid;
+}
+.x-border-panel {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.x-panel {
+    border-color: #99BBE8;
+    border-style: solid;
+    border-width: 0;
+}
+.x-panel-bwrap {
+    overflow: hidden;
+}
+element.style {
+    height: auto;
+    width: 1920px;
+}
+.x-panel-noborder .x-panel-body-noborder {
+    border-width: 0;
+}
+.x-panel-body-noheader, .x-panel-mc .x-panel-body {
+    border-color: #D0D0D0;
+}
+.x-panel-body {
+    border-color: #D0D0D0;
+}
+.x-panel-body {
+    overflow: hidden;
+}
+.x-panel-body-noheader, .x-panel-mc .x-panel-body {
+    border-top: 1px solid #99BBE8;
+}
+.x-panel-body {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 white;
+    border-color: -moz-use-text-color #99BBE8 #99BBE8;
+    border-right: 1px solid #99BBE8;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    overflow: hidden;
+    position: relative;
+}
+blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+.x-panel-bwrap {
+    overflow: hidden;
+}
+img, body, html {
+    border: 0 none;
+}
+IMG {
+    border: medium none;
+}
+img {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+.x-toolbar {
+    background: url("../images/bi/bg.gif") repeat-x scroll left top #F0F4F5;
+    border-color: #D0D0D0;
+}
+.x-toolbar {
+    background: url("../images/bi/bg.gif") repeat-x scroll left top #D0DEF0;
+    border-color: #A9BFD3;
+    border-style: solid;
+    border-width: 0 0 1px;
+    display: block;
+    padding: 2px;
+    position: relative;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.x-toolbar td, .x-toolbar span, .x-toolbar input, .x-toolbar div, .x-toolbar select, .x-toolbar label {
+    font: 11px tahoma,arial,helvetica,sans-serif;
+    white-space: nowrap;
+}
+.x-toolbar td {
+    vertical-align: middle;
+}
+.x-btn {
+    cursor: pointer;
+    font: 11px tahoma,verdana,helvetica;
+    white-space: nowrap;
+}
+.x-toolbar .x-btn-left {
+    background: none repeat scroll 0 0 transparent;
+}
+.x-btn-left {
+    background-image: url("../images/bi/btn-sprite.gif");
+}
+.x-btn-left {
+    background: url("../images/bi/btn-sprite.gif") no-repeat scroll 0 0 transparent;
+    height: 21px;
+    width: 3px;
+}
+.x-btn-left, .x-btn-right {
+    font-size: 1px;
+    line-height: 1px;
+}
+.x-btn-left i, .x-btn-right i {
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+    overflow: hidden;
+    width: 3px;
+}
+.ext-gecko .x-btn-menu-text-wrap .x-btn-center {
+    padding: 0 1px;
+}
+.x-btn-menu-text-wrap .x-btn-center {
+    padding: 0 3px;
+}
+.x-btn-center {
+    background-image: url("../images/bi/btn-sprite.gif");
+}
+.x-btn-center {
+    background: url("../images/bi/btn-sprite.gif") repeat-x scroll 0 -42px transparent;
+    cursor: pointer;
+    padding: 0 5px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.ext-gecko .x-toolbar .x-btn-menu-text-wrap .x-btn-center button {
+    padding-right: 0;
+}
+.x-toolbar .x-btn-menu-text-wrap .x-btn-center button {
+    padding-right: 2px;
+}
+.x-btn-text-icon .x-btn-center .x-btn-text {
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    padding: 3px 0 2px 18px;
+}
+.ext-gecko .x-btn button {
+    padding-left: 0;
+    padding-right: 0;
+}
+.x-toolbar button {
+    color: #444444;
+}
+.x-btn button {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    font: 11px tahoma,verdana,helvetica;
+    margin: 0;
+    outline: 0 none;
+    overflow: visible;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: auto;
+}
+.x-toolbar .x-btn-center {
+    background: none repeat scroll 0 0 transparent;
+    padding: 0;
+}
+.x-btn-menu-arrow-wrap .x-btn-center {
+    padding: 0;
+}
+.x-toolbar .x-btn-text-icon .x-btn-menu-arrow-wrap .x-btn-center button {
+    background-image: url("../images/bi/btn-arrow.gif");
+}
+.x-toolbar .x-btn-text-icon .x-btn-menu-arrow-wrap .x-btn-center button {
+    background: url("../images/bi/btn-arrow.gif") no-repeat scroll 0 3px transparent;
+    width: 12px;
+}
+.x-toolbar .x-btn-menu-arrow-wrap .x-btn-center button {
+    background-image: url("../images/bi/btn-arrow.gif");
+}
+.x-toolbar .x-btn-menu-arrow-wrap .x-btn-center button {
+    background: url("../images/bi/btn-arrow.gif") no-repeat scroll 0 3px transparent;
+    width: 12px;
+}
+.x-toolbar .x-btn-menu-arrow-wrap .x-btn-center button {
+    padding: 0 2px;
+}
+.x-btn-menu-arrow-wrap .x-btn-center button {
+    background: url("../images/bi/btn-arrow.gif") no-repeat scroll left 3px transparent;
+    display: block;
+    height: 21px;
+    padding: 0 !important;
+    width: 12px !important;
+}
+.ext-gecko .x-btn button {
+    padding-left: 0;
+    padding-right: 0;
+}
+.x-toolbar button {
+    color: #444444;
+}
+.x-btn button {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    font: 11px tahoma,verdana,helvetica;
+    margin: 0;
+    outline: 0 none;
+    overflow: visible;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: auto;
+}
+.x-toolbar .x-btn-right {
+    background: none repeat scroll 0 0 transparent;
+}
+.x-toolbar td {
+    vertical-align: middle;
+}
+.x-btn-right {
+    background-image: url("../images/bi/btn-sprite.gif");
+}
+.x-btn-right {
+    background: url("../images/bi/btn-sprite.gif") no-repeat scroll 0 -21px transparent;
+    height: 21px;
+    width: 3px;
+}
+.x-btn-left, .x-btn-right {
+    font-size: 1px;
+    line-height: 1px;
+}
+.x-toolbar .ytb-sep {
+    background-image: url("../images/bi/grid-split.gif");
+}
+.x-toolbar .ytb-sep {
+    background-image: url("../images/bi/grid-split.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: default;
+    display: block;
+    font-size: 1px;
+    height: 16px;
+    margin: 0 2px;
+    overflow: hidden;
+    width: 4px;
+}
+.x-toolbar .ytb-spacer {
+    width: 2px;
+}

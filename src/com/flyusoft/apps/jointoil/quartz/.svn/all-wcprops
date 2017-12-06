@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz
+END
+QuartzJobWell.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/QuartzJobWell.java
+END
+QuartzJobDeleteMonthData.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/QuartzJobDeleteMonthData.java
+END
+InsertAlarmLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/InsertAlarmLog.java
+END
+RandomNumber.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/platform/!svn/ver/435/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/RandomNumber.java
+END
+ChangeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/ChangeData.java
+END
+QuartzJobCompressor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/QuartzJobCompressor.java
+END
+TimerTools.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/TimerTools.java
+END
+JointOilInitJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/platform/!svn/ver/412/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/quartz/JointOilInitJob.java
+END

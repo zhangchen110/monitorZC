@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>Quartz的油井、机房、压缩机、指标初始化任务配置</description>
+
+	<bean name="jointOilInitQuartz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="jointOilInitTrigger" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 触发器 --> 
+	<bean name="jointOilInitTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="jointOilInitTask" />
+		<property name="startDelay" value="1000"/> 
+		<property name="repeatInterval" value="94608000000"/> 
+		<property name="repeatCount" value="0"/>
+	</bean>
+	
+	<!-- 作业 -->
+	<bean id="jointOilInitTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="jointOilInitJob" />
+		<property name="targetMethod" value="execute" />
+		<property name="concurrent" value="false"/>
+	</bean>
+
+	<!-- 任务 -->
+	<bean name="jointOilInitJob" class="com.flyusoft.apps.jointoil.quartz.JointOilInitJob" />
+</beans>

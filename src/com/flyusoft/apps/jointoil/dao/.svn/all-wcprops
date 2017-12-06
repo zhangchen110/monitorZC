@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/platform/!svn/ver/481/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao
+END
+MachineRoomDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/platform/!svn/ver/456/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/MachineRoomDao.java
+END
+MachineRoomMonitorDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/MachineRoomMonitorDataDao.java
+END
+FiveBoosterCompressorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/FiveBoosterCompressorDao.java
+END
+MonitorDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/platform/!svn/ver/328/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/MonitorDataDao.java
+END
+FiveScrewMachineDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/FiveScrewMachineDao.java
+END
+CompressorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/360/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/CompressorDao.java
+END
+TwoBoosterCompressorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/TwoBoosterCompressorDao.java
+END
+OneIntegratedMachineDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/OneIntegratedMachineDao.java
+END
+WellDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/platform/!svn/ver/360/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/WellDao.java
+END
+FourIntegratedMachineDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/FourIntegratedMachineDao.java
+END
+CompressorDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/480/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/CompressorDataDao.java
+END
+ThreeScrewMachineDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/ThreeScrewMachineDao.java
+END
+IndexDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/platform/!svn/ver/240/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/IndexDao.java
+END
+AlarmLogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/platform/!svn/ver/395/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/AlarmLogDao.java
+END
+DeleteMsgByMonthDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/474/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/DeleteMsgByMonthDao.java
+END
+ThreeBoosterCompressorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/ThreeBoosterCompressorDao.java
+END
+CompressorMonitorDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/408/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/CompressorMonitorDataDao.java
+END
+ReportHtmlDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/202/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/ReportHtmlDao.java
+END
+TwoScrewMachineDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/platform/!svn/ver/422/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/dao/TwoScrewMachineDao.java
+END

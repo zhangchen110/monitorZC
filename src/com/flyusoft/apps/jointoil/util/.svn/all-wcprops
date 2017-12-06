@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util
+END
+InsertFourIntegratedMachineThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertFourIntegratedMachineThread.java
+END
+GainCompressorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/408/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/GainCompressorData.java
+END
+InsertTwoBoosterCompressorThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertTwoBoosterCompressorThread.java
+END
+JointOilInitentity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/JointOilInitentity.java
+END
+CompressorSaveEmpty.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/CompressorSaveEmpty.java
+END
+InsertThreeBoosterCompressorThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertThreeBoosterCompressorThread.java
+END
+InsertFiveScrewMachineThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertFiveScrewMachineThread.java
+END
+InsertMachineRoomMonitorDataThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertMachineRoomMonitorDataThread.java
+END
+InsertFiveBoosterCompressorThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertFiveBoosterCompressorThread.java
+END
+AlarmUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/platform/!svn/ver/484/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/AlarmUtil.java
+END
+InsertAlarmThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertAlarmThread.java
+END
+InsertThreeScrewMachineThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertThreeScrewMachineThread.java
+END
+InsertOneIntegratedMachineThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/platform/!svn/ver/475/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/util/InsertOneIntegratedMachineThread.java
+END

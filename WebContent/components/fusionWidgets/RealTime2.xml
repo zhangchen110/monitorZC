@@ -1,0 +1,13 @@
+
+		<chart lowerLimit='0' upperLimit='100' lowerLimitDisplay='0'
+			upperLimitDisplay='Good' palette='1' numberSuffix='%'
+			chartRightMargin='20' decimals='0'  showBorder='0'>
+			<colorRange>
+				<color minValue='0' maxValue='75' code='FF654F' label='Bad' />
+				<color minValue='75' maxValue='90' code='F6BD0F' label='Moderate' />
+				<color minValue='90' maxValue='100' code='8BBA00' label='Good' />
+			</colorRange>
+			<pointers>
+				<pointer id='CPU1' value='0' toolText='pressure' />
+			</pointers>
+		</chart>

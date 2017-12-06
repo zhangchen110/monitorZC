@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- 登录 -->
+	<package name="login" extends="struts-default" namespace="/">
+		<action name="login_*" class="loginAction" method="{1}">
+			<result name="toLogin">/login.jsp</result>
+			<result type="redirect">/user.do</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+	</package>
+
+	<!-- 用户管理 -->
+	<package name="sys" extends="defined-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="success">/components/sys/userList.jsp</result>
+			<result name="input">/components/sys/userInput.jsp</result>
+			<result name="reload" type="redirect">/user.do</result>
+		</action>
+	</package>
+	<!-- 模拟FusionChart效果图 -->
+	<package name="fusionChart" extends="defined-default" namespace="/">
+		<action name="fusionChart_*" class="fusionChartsAction" method="{1}">
+			<result name="success">/fusionCharts/demo.jsp</result>
+		</action>
+	</package>
+	
+</struts>

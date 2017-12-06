@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity
+END
+CompressorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/platform/!svn/ver/438/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/CompressorData.java
+END
+Well.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/platform/!svn/ver/525/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/Well.java
+END
+FourIntegratedMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/FourIntegratedMachine.java
+END
+OneIntegratedMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/OneIntegratedMachine.java
+END
+TwoBoosterCompressor.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/TwoBoosterCompressor.java
+END
+TwoCompressorAllElements.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/TwoCompressorAllElements.java
+END
+FiveScrewMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/FiveScrewMachine.java
+END
+Compressor.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/454/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/Compressor.java
+END
+MonitorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/platform/!svn/ver/365/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/MonitorData.java
+END
+FiveBoosterCompressor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/FiveBoosterCompressor.java
+END
+MachineRoom.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/platform/!svn/ver/456/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/MachineRoom.java
+END
+MachineRoomMonitorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/521/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/MachineRoomMonitorData.java
+END
+FiveCompressorAllElements.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/FiveCompressorAllElements.java
+END
+ReportHtml.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/platform/!svn/ver/200/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/ReportHtml.java
+END
+TwoScrewMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/TwoScrewMachine.java
+END
+CompressorMonitorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/CompressorMonitorData.java
+END
+CompressorMD.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/platform/!svn/ver/450/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/CompressorMD.java
+END
+ThreeBoosterCompressor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/ThreeBoosterCompressor.java
+END
+ThreeCompressorAllElements.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/ThreeCompressorAllElements.java
+END
+AlarmLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/platform/!svn/ver/365/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/AlarmLog.java
+END
+Index.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/platform/!svn/ver/456/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/Index.java
+END
+ThreeScrewMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/platform/!svn/ver/473/trunk/flyusofts/src/main/java/com/flyusoft/apps/jointoil/entity/ThreeScrewMachine.java
+END

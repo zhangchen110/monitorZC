@@ -1,0 +1,37 @@
+10
+
+dir
+491
+http://192.168.1.104:8899/svn/platform/trunk/flyusofts/webapp/fusionCharts/FlashExamples/CS3CS4/com/fusioncharts/components/flx
+http://192.168.1.104:8899/svn/platform
+
+
+
+2011-09-26T02:51:29.828125Z
+181
+helin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c15ff8bf-4a9c-6349-a260-d3625da587b8
+
+data
+dir
+
+events
+dir
+
+external
+dir
+
